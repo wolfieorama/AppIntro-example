@@ -36,7 +36,7 @@ public class MyIntro extends AppIntro {
 
         addSlide(AppIntroFragment.newInstance("slide1", "thi is my slide booyah",R.drawable.image1,R.color.material_blue_grey_800));
         addSlide(AppIntroFragment.newInstance("slide2", "this is my slide 2 booyah",R.drawable.image2,R.color.material_blue_grey_800));
-
+        addSlide(AppIntroFragment.newInstance("slide3", "this is my slide 3 booyah",R.drawable.image2,R.color.material_blue_grey_800));
         // OPTIONAL METHODS
         // Override bar/separator color
         setBarColor(Color.parseColor("#3F51B5"));
@@ -52,6 +52,11 @@ public class MyIntro extends AppIntro {
         setVibrateIntensity(30);
     }
 
+    private void loadMainActivity(){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     public void onSkipPressed() {
         loadMainActivity();
@@ -64,8 +69,5 @@ public class MyIntro extends AppIntro {
         // Do something when users tap on Done button.
     }
 
-    private void loadMainActivity(){
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
+
 }
